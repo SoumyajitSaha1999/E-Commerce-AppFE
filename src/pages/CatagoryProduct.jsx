@@ -18,7 +18,7 @@ function CatagoryProduct() {
   // Get product by catagory
   const getProductsByCat = async() => {
     try {
-      const {data} = await axios.get(`http://localhost:8000/api/v1/product/product-catagory/${params.slug}`);
+      const {data} = await axios.get(`https://e-commerce-appbe.onrender.com/api/v1/product/product-catagory/${params.slug}`);
       setProducts(data?.products);
       setCatagory(data?.catagory);
       
@@ -42,7 +42,7 @@ function CatagoryProduct() {
             <div className="d-flex flex-wrap">
               {products?.map((p) => (
                 <div className="card m-2" style={{width: '18rem'}}>
-                  <img src={`http://localhost:8000/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt={p.name} />
+                  <img src={`https://e-commerce-appbe.onrender.com/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt={p.name} />
                 <div className="card-body">
                   <div className="card-name-price">
                     <h2 className="card-title">{p.name}</h2>
