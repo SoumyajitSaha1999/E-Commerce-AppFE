@@ -11,7 +11,7 @@ function Products() {
   // Get all products
   const getAllProducts = async() => {
     try {
-      const {data} = await axios.get("http://localhost:8000/api/v1/product/get-product");
+      const {data} = await axios.get("https://e-commerce-appbe.onrender.com/api/v1/product/get-product");
       // console.log("DATA", data);
       setProducts(data.products);
         
