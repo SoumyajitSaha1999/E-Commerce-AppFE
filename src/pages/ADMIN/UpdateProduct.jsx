@@ -26,7 +26,7 @@ function UpdateProduct() {
   // Get Single Product previous details
   const getSingleProduct = async () => {
     try {
-      const {data} = await axios.get(`https://e-commerce-appbe.onrender.com/v1/product/get-product/${params.slug}`);
+      const {data} = await axios.get(`https://e-commerce-appbe.onrender.com/api/v1/product/get-product/${params.slug}`);
       console.log("dataaa", data);
 
       setName(data.product.name);
