@@ -26,7 +26,7 @@ function UpdateProduct() {
   // Get Single Product previous details
   const getSingleProduct = async () => {
     try {
-      const {data} = await axios.get(`http://localhost:8000/api/v1/product/get-product/${params.slug}`);
+      const {data} = await axios.get(`https://e-commerce-appbe.onrender.com/v1/product/get-product/${params.slug}`);
       console.log("dataaa", data);
 
       setName(data.product.name);
@@ -60,7 +60,7 @@ function UpdateProduct() {
       productData.append("catagory", catagory);
       productData.append("shipping", shipping);
    
-      const {data} = await axios.put(`http://localhost:8000/api/v1/product/update-product/${id}`, productData);
+      const {data} = await axios.put(`https://e-commerce-appbe.onrender.com/api/v1/product/update-product/${id}`, productData);
       // console.log("DATA", data);
       if(data?.success) {
         toast.success("Product Updated Successfully");
@@ -81,7 +81,7 @@ function UpdateProduct() {
     try {
       let ans = window.prompt("Are you sure to Delete this product");
       if(!ans) return;
-      const {data} = await axios.delete(`http://localhost:8000/api/v1/product/delete-product/${id}`);
+      const {data} = await axios.delete(`https://e-commerce-appbe.onrender.com/api/v1/product/delete-product/${id}`);
       toast.success("Product Deleted Successfully");
       navigate("/dashboard/admin/products");
       
@@ -94,7 +94,7 @@ function UpdateProduct() {
   // Get All Catagories
   const getAllCatagory = async() => {
     try {
-      const {data} = await axios.get("http://localhost:8000/api/v1/catagory/get-catagory");
+      const {data} = await axios.get("https://e-commerce-appbe.onrender.com/api/v1/catagory/get-catagory");
       // console.log("DATA", data);
       if(data?.success) {
         setCatagories(data?.catagory);
@@ -143,7 +143,7 @@ function UpdateProduct() {
                   </div>
                 ) : (
                     <div className="text-center">
-                      <img src={`http://localhost:8000/api/v1/product/product-photo/${id}`} alt="product-photo" height={"200px"} className="img img-responsive" />
+                      <img src={`https://e-commerce-appbe.onrender.com/api/v1/product/product-photo/${id}`} alt="product-photo" height={"200px"} className="img img-responsive" />
                     </div>
                 )}
               </div>
