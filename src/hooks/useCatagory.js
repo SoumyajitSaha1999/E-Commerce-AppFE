@@ -7,7 +7,7 @@ export default function useCatagory() {
   // Get Catagories
   const getCatagories = async() => {
     try {
-      const {data} = await axios.get("http://localhost:8000/api/v1/catagory/get-catagory");
+      const {data} = await axios.get("https://e-commerce-appbe.onrender.com/api/v1/catagory/get-catagory");
       setCatagories(data?.catagory);
         
     } catch (error) {
