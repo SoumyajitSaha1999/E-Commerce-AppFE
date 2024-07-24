@@ -19,7 +19,7 @@ function AdminOrders() {
 
   const getOrders = async() => {
     try {
-      const {data} = await axios.get("http://localhost:8000/api/v1/auth/all-orders");
+      const {data} = await axios.get("https://e-commerce-appbe.onrender.com/api/v1/auth/all-orders");
       setOrders(data);
       
     } catch (error) {
@@ -33,7 +33,7 @@ function AdminOrders() {
 
   const handleChange = async(orderId, value) => {
     try {
-      const {data} = await axios.put(`http://localhost:8000/api/v1/auth/order-status/${orderId}`, {status: value});
+      const {data} = await axios.put(`https://e-commerce-appbe.onrender.com/api/v1/auth/order-status/${orderId}`, {status: value});
       getOrders();
         
     } catch (error) {
@@ -88,7 +88,7 @@ function AdminOrders() {
                         {o?.products?.map((p,i) => (
                           <div key={p._id} className="row mb-3 p-3 card flex-row">
                             <div className="col-md-4">
-                              <img src={`http://localhost:8000/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt={p.name} width={"80px"} height={"140px"} />
+                              <img src={`https://e-commerce-appbe.onrender.com/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt={p.name} width={"80px"} height={"140px"} />
                             </div>
 
                             <div className="col-md-8">
