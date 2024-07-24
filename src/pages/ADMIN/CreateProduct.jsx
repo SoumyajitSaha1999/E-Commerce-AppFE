@@ -32,7 +32,7 @@ function CreateProduct() {
       productData.append("catagory", catagory);
       productData.append("shipping", shipping);
 
-      const {data} = await axios.post("http://localhost:8000/api/v1/product/create-product", productData);
+      const {data} = await axios.post("https://e-commerce-appbe.onrender.com/api/v1/product/create-product", productData);
       // console.log("DATA", data);
       if(data?.success) {
         toast.success("Product Created Successfully");
@@ -50,7 +50,7 @@ function CreateProduct() {
   // Get All Catagories
   const getAllCatagory = async() => {
     try {
-      const {data} = await axios.get("http://localhost:8000/api/v1/catagory/get-catagory");
+      const {data} = await axios.get("https://e-commerce-appbe.onrender.com/api/v1/catagory/get-catagory");
       // console.log("DATA", data);
       if(data?.success) {
         setCatagories(data?.catagory);
