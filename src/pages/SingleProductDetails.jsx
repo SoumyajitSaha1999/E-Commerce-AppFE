@@ -16,7 +16,7 @@ function SingleProductDetails() {
   // getProduct
   const getProduct = async() => {
     try {
-      const {data} = await axios.get(`http://localhost:8000/api/v1/product/get-product/${params.slug}`);
+      const {data} = await axios.get(`https://e-commerce-appbe.onrender.com/api/v1/product/get-product/${params.slug}`);
       setProduct(data?.product);
       getSimilarProduct(data?.product._id, data?.product.catagory._id);
         
@@ -33,7 +33,7 @@ function SingleProductDetails() {
   // Get similar product
   const getSimilarProduct = async(pid, cid) => {
     try {
-      const {data} = await axios.get(`http://localhost:8000/api/v1/product/related-product/${pid}/${cid}`)
+      const {data} = await axios.get(`https://e-commerce-appbe.onrender.com/api/v1/product/related-product/${pid}/${cid}`)
       setRelatedProducts(data?.products);
         
     } catch (error) {
@@ -45,7 +45,7 @@ function SingleProductDetails() {
     <Layout title={"Product Details - E-Commerce App"}>
       <div className="row container mt-3 product-details">
         <div className="col-md-6">
-          <img src={`http://localhost:8000/api/v1/product/product-photo/${product._id}`} className="card-img-top" alt={product.name} height={"400px"} width={"170px"} />
+          <img src={`https://e-commerce-appbe.onrender.com/api/v1/product/product-photo/${product._id}`} className="card-img-top" alt={product.name} height={"400px"} width={"170px"} />
         </div>
         <div className="col-md-6 product-details-info">
           <h1 className="text-center">Product Details</h1> <hr />
@@ -69,7 +69,7 @@ function SingleProductDetails() {
         <div className="d-flex flex-wrap">
           {relatedProducts?.map((p) => (
             <div className="card m-2" style={{width: '18rem'}}>
-              <img src={`http://localhost:8000/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt={p.name} />
+              <img src={`https://e-commerce-appbe.onrender.com/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt={p.name} />
             <div className="card-body">
               <h2 className="card-title">{p.name}</h2>
               <h5 className="card-price">Rs: {p.price}/-</h5>
