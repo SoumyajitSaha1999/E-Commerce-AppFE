@@ -20,7 +20,7 @@ function Login() {
     // console.log(name, email, password, phone, address);
     // toast.success("Register Successfully");
     try {
-      const res = await axios.post("http://localhost:8000/api/v1/auth/login", { email, password });
+      const res = await axios.post("https://e-commerce-appbe.onrender.com/api/v1/auth/login", { email, password });
       if(res && res.data.success) {
         toast.success(res.data && res.data.message);
         setAuth({
