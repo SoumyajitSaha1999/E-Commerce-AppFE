@@ -18,7 +18,7 @@ function ForgotPassword() {
     // console.log(name, email, password, phone, address);
     // toast.success("Register Successfully");
     try {
-      const res = await axios.post("http://localhost:8000/api/v1/auth/forgot-password", { email, newPassword, answer });
+      const res = await axios.post("https://e-commerce-appbe.onrender.com/api/v1/auth/forgot-password", { email, newPassword, answer });
       if(res && res.data.success) {
         toast.success(res.data && res.data.message);
         navigate("/login")
