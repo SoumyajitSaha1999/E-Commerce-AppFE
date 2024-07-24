@@ -29,7 +29,7 @@ function Profile() {
   const handleSubmit = async(e) => {
     e.preventDefault();
     try {
-      const {data} = await axios.put("http://localhost:8000/api/v1/auth/profile", {name, email, password, phone, address});
+      const {data} = await axios.put("https://e-commerce-appbe.onrender.com/api/v1/auth/profile", {name, email, password, phone, address});
       if(data?.error) {
         toast.error(data?.error);
       } else {
