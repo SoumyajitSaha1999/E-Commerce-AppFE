@@ -17,7 +17,7 @@ function CreateCatagory() {
   const handleSubmit = async(e) => {
     e.preventDefault();
     try {
-      const {data} = await axios.post("http://localhost:8000/api/v1/catagory/create-catagory", {name});
+      const {data} = await axios.post("https://e-commerce-appbe.onrender.com/api/v1/catagory/create-catagory", {name});
       if(data?.success) {
         toast.success(`${name} is Created`);
         getAllCatagory();
@@ -36,7 +36,7 @@ function CreateCatagory() {
     e.preventDefault();
     try {
       // console.log(e);
-      const {data} = await axios.put(`http://localhost:8000/api/v1/catagory/update-catagory/${selected._id}`, {name: updatedName});
+      const {data} = await axios.put(`https://e-commerce-appbe.onrender.com/api/v1/catagory/update-catagory/${selected._id}`, {name: updatedName});
       if(data?.success) {
         toast.success(`${updatedName} is Updated`);
         setSelected(null);
@@ -56,7 +56,7 @@ function CreateCatagory() {
   // Delete Catagory
   const handleDelete = async(pId) => {
     try {
-      const {data} = await axios.delete(`http://localhost:8000/api/v1/catagory/delete-catagory/${pId}`);
+      const {data} = await axios.delete(`https://e-commerce-appbe.onrender.com/api/v1/catagory/delete-catagory/${pId}`);
       if(data?.success) {
         toast.success("Category is Deleted");
         getAllCatagory();
@@ -73,7 +73,7 @@ function CreateCatagory() {
   // Get All Catagories
   const getAllCatagory = async() => {
     try {
-      const {data} = await axios.get("http://localhost:8000/api/v1/catagory/get-catagory");
+      const {data} = await axios.get("https://e-commerce-appbe.onrender.com/api/v1/catagory/get-catagory");
       // console.log("DATA", data);
       if(data?.success) {
         setCatagories(data?.catagory);
