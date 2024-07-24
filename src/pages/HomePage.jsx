@@ -25,7 +25,7 @@ function HomePage() {
   // Get All Catagories
   const getAllCatagory = async() => {
     try {
-      const {data} = await axios.get("http://localhost:8000/api/v1/catagory/get-catagory");
+      const {data} = await axios.get("https://e-commerce-appbe.onrender.com/api/v1/catagory/get-catagory");
       // console.log("DATA", data);
       if(data?.success) {
         setCatagories(data?.catagory);
@@ -45,7 +45,7 @@ function HomePage() {
   const getAllProducts = async() => {
     try {
       setLoading(true);
-      const {data} = await axios.get(`http://localhost:8000/api/v1/product/product-list/${page}`);
+      const {data} = await axios.get(`https://e-commerce-appbe.onrender.com/api/v1/product/product-list/${page}`);
       setLoading(false);
       setProducts(data.products);
       
@@ -64,7 +64,7 @@ function HomePage() {
   // Get total count
   const getTotal = async() => {
     try {
-      const {data} = await axios.get("http://localhost:8000/api/v1/product/product-count")
+      const {data} = await axios.get("https://e-commerce-appbe.onrender.com/api/v1/product/product-count")
       setTotal(data?.total);
         
     } catch (error) {
@@ -82,7 +82,7 @@ function HomePage() {
   const loadMore = async() => {
     try {
       setLoading(true);
-      const {data} = await axios.get(`http://localhost:8000/api/v1/product/product-list/${page}`);
+      const {data} = await axios.get(`https://e-commerce-appbe.onrender.com/api/v1/product/product-list/${page}`);
       setLoading(false);
       setProducts([...products, ...data?.products])
       
@@ -105,7 +105,7 @@ function HomePage() {
   // Get filterd product
   const filterProduct = async() => {
     try {
-      const {data} = await axios.post("http://localhost:8000/api/v1/product/product-filters", {checked, radio});
+      const {data} = await axios.post("https://e-commerce-appbe.onrender.com/api/v1/product/product-filters", {checked, radio});
       setProducts(data?.products);
       
     } catch (error) {
@@ -163,7 +163,7 @@ function HomePage() {
           <div className="d-flex flex-wrap">
             {products?.map((p) => (
               <div className="card m-2" style={{width: '18rem'}}>
-                <img src={`http://localhost:8000/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt={p.name} />
+                <img src={`https://e-commerce-appbe.onrender.com/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt={p.name} />
               <div className="card-body">
                 <h3 className="card-title">{p.name}</h3>
                 <h5 className="card-title price">Rs: {p.price}/-</h5>
