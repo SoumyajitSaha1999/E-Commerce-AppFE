@@ -12,7 +12,7 @@ function Orders() {
 
   const getOrders = async() => {
     try {
-      const {data} = await axios.get("http://localhost:8000/api/v1/auth/orders");
+      const {data} = await axios.get("https://e-commerce-appbe.onrender.com/api/v1/auth/orders");
       setOrders(data);
       
     } catch (error) {
@@ -64,7 +64,7 @@ function Orders() {
                       {o?.products?.map((p,i) => (
                         <div key={p._id} className="row mb-3 p-3 card flex-row">
                           <div className="col-md-4">
-                            <img src={`http://localhost:8000/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt={p.name} width={"80px"} height={"140px"} />
+                            <img src={`https://e-commerce-appbe.onrender.com/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt={p.name} width={"80px"} height={"140px"} />
                           </div>
 
                           <div className="col-md-8">
